@@ -244,20 +244,22 @@ public class MainActivity extends AppCompatActivity {
 
     //自定义对话框
     public void customDialog(View view){
-        final Dialog customdialog = createCustomDialog(MainActivity.this);
-        customdialog.show();
+        final Dialog customdialog = createCustomDialog(getApplicationContext());
+
         new Thread(){
             @Override
             public void run() {
                 try{
                     sleep(2000);
+                    customdialog.dismiss();
                 }catch (Exception e){
                     e.printStackTrace();
                 }finally {
-                    customdialog.dismiss();
+
                 }
             }
         }.start();
+        customdialog.show();
     }
 
     public Dialog createCustomDialog(Context context){
@@ -265,14 +267,14 @@ public class MainActivity extends AppCompatActivity {
         View v = layoutInflater.inflate(R.layout.item_dialog, null);
         LinearLayout linearLayout = (LinearLayout)v.findViewById(R.id.linearLayout_dialog);
 
-        ImageView imageView = (ImageView)findViewById(R.id.imageView_dialog);
-        TextView textView = (TextView)findViewById(R.id.textView_dialog);
+        ImageView imageView = (ImageView)linearLayout.findViewById(R.id.imageView_dialog);
+        TextView textView = (TextView)linearLayout.findViewById(R.id.textView_dialog);
 
         Animation animation;
-        animation = AnimationUtils.loadAnimation(context, R.anim.dialog_loading);
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.dialog_loading);
         // 设置动画
-//        imageView.startAnimation(animation);
-        Dialog loadDialog = new Dialog(context, R.style.loading_dialog);
+        imageView.startAnimation(animation);
+        Dialog loadDialog = new Dialog(MainActivity.this, R.style.loading_dialog);
         loadDialog.setCancelable(false);
         loadDialog.setContentView(v, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT));
         return loadDialog;
