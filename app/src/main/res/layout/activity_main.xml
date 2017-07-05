@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_single" />
+
+    <Button
+        android:id="@+id/button_multi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_multi" />
+
+    <Button
+        android:id="@+id/button_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="timePickerDialog"
+        android:text="@string/button_time" />
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="datePickerDialog"
+        android:text="@string/button_date" />
+
+    <Button
+        android:id="@+id/button_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="progressFinished"
+        android:text="@string/button_progress" />
+
+    <Button
+        android:id="@+id/button_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_dialog"/>
+
+    <TextView
+        android:id="@+id/textView_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_single"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView_multi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_multi"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_time"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_date"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+</LinearLayout>

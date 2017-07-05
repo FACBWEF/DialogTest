@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DialogTest</string>
+    <string name="button_single">SINGLE</string>
+    <string name="button_multi">MULTI</string>
+    <string name="button_time">TIME</string>
+    <string name="button_date">DATE</string>
+    <string name="button_progress">PROGRESS</string>
+    <string name="button_dialog">CUSTOM</string>
+    <string name="textView_single">The language of your choice:</string>
+    <string name="textView_multi">The platform you choose:</string>
+    <string name="textView_time">The time of your choice:</string>
+    <string name="textView_date">The date of your choice:</string>
+    <string name="textView_progress">The progress of downloading:</string>
+    <string name="textView_dialog">Loading...</string>
+</resources>
