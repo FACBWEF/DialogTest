@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout_dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -8,16 +9,17 @@
     android:minWidth="180dp">
 
         <ImageView
+            android:id="@+id/imageView_dialog"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/Loading"
+            android:src="@drawable/loading"
             android:layout_weight="2"/>
 
         <TextView
             android:id="@+id/textView_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:text="@string/textView_dialog"
             android:layout_weight="1"/>
 

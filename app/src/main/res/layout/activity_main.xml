@@ -46,7 +46,8 @@
         android:id="@+id/button_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_dialog"/>
+        android:onClick="customDialog"
+        android:text="@string/button_dialog" />
 
     <TextView
         android:id="@+id/textView_single"

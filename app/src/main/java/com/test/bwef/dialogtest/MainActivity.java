@@ -5,15 +5,21 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -238,6 +244,37 @@ public class MainActivity extends AppCompatActivity {
 
     //自定义对话框
     public void customDialog(View view){
+        final Dialog customdialog = createCustomDialog(MainActivity.this);
+        customdialog.show();
+        new Thread(){
+            @Override
+            public void run() {
+                try{
+                    sleep(2000);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    customdialog.dismiss();
+                }
+            }
+        }.start();
+    }
 
+    public Dialog createCustomDialog(Context context){
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View v = layoutInflater.inflate(R.layout.item_dialog, null);
+        LinearLayout linearLayout = (LinearLayout)v.findViewById(R.id.linearLayout_dialog);
+
+        ImageView imageView = (ImageView)findViewById(R.id.imageView_dialog);
+        TextView textView = (TextView)findViewById(R.id.textView_dialog);
+
+        Animation animation;
+        animation = AnimationUtils.loadAnimation(context, R.anim.dialog_loading);
+        // 设置动画
+//        imageView.startAnimation(animation);
+        Dialog loadDialog = new Dialog(context, R.style.loading_dialog);
+        loadDialog.setCancelable(false);
+        loadDialog.setContentView(v, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT));
+        return loadDialog;
     }
 }
